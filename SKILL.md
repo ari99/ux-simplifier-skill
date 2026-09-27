@@ -1,6 +1,6 @@
 ---
 name: ux-simplifier
-description: Simplifies confusing digital products by improving user journeys, navigation, onboarding, forms, actions, terminology, and UX copy before visual polish. Use when workflows are unclear, users feel lost, there are too many pages or choices, or first-time users cannot identify what to do next.
+description: Completes full-product UX simplification by improving user journeys, navigation, onboarding, forms, actions, terminology, and UX copy before visual polish. Use when workflows are unclear, users feel lost, there are too many pages or choices, or first-time users cannot identify what to do next.
 ---
 
 # UX Simplifier
@@ -109,6 +109,30 @@ Detailed instructions are in [UX_PHASES.md](UX_PHASES.md). Do not read the whole
 9. **Polish visually** — apply `impeccable` only after structural simplification.
 10. **Fresh-user walkthrough** — reuse `evaluate`; fix remaining friction.
 
+## Full-product completion gate
+Prioritization controls implementation order, not final scope. Completing the core journey does not complete this skill.
+
+Maintain one route-and-workflow ledger from the shared product map. Group truly repetitive surfaces, but account for every user-facing route, page, form, modal, major state, and workflow with exactly one disposition:
+
+- `changed and verified`
+- `reviewed — no change needed`
+- `blocked — reason and remaining work`
+- `approval required — irreversible product decision`
+
+Before reporting completion:
+
+1. Complete the primary setup → first value → repeat value journeys first.
+2. Continue through every remaining ledger item; do not stop because the prioritized slice passes.
+3. Apply each dependent skill at its required phase. Reading a dependency without applying its workflow does not count.
+4. Consume every delegated audit or review result before finalizing the working brief or implementation. Do not send the final response while scoped subagents are still running or before incorporating their findings.
+5. Revisit the ledger after implementation for newly exposed routes, states, permissions, and recovery paths.
+6. Verify every changed surface and top-level journey. For pages sharing one implementation, verify the shared behavior plus one representative per meaningful variant.
+7. Perform the fresh-user walkthrough across public entry, account creation, onboarding, first value, repeat use, settings, permissions, errors, empty states, and recovery.
+8. Run appropriate type, lint, unit, integration, and browser checks; fix regressions before completion.
+9. In the final response, state ledger coverage and unresolved blockers. Never call the pass complete when only prioritized or representative surfaces were implemented.
+
+The pass may end incomplete only when the user pauses or narrows it, an irreversible decision needs approval, or a definitive external blocker prevents further work. Continue all independent ledger items despite one blocked item.
+
 ## Critical rules
 1. Stay in Agent mode unless the user explicitly asks for plan-only work.
 2. UX structure comes before visual design.
@@ -132,6 +156,9 @@ Detailed instructions are in [UX_PHASES.md](UX_PHASES.md). Do not read the whole
 20. Optimize for successful task completion, not feature visibility.
 21. Read each relevant file, skill, and reference section at most once unless it changes.
 22. When uncertain ask: "What is the smallest amount the user needs to understand right now?"
+23. Prioritization is sequencing, not permission to omit the rest of the product.
+24. Do not finalize before all delegated findings are received and incorporated.
+25. Do not claim full completion without a closed route-and-workflow ledger.
 
 ## Desired outcome
 The product should guide the user without feeling restrictive.
