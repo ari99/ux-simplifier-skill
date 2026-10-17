@@ -10,6 +10,8 @@ It focuses first on product structure and task completion:
 - forms, actions, and feedback
 - terminology and UX copy
 - progressive disclosure
+- page comprehension, reporting, and collection views
+- accessible correction, safe retry, and return-to-task continuity
 - cognitive-load reduction
 
 Visual polish comes only after the product experience is understandable.
@@ -30,6 +32,8 @@ The skill inspects an existing application, identifies its most important user o
 - keep
 
 It then redesigns the primary journeys, simplifies navigation and page structure, improves onboarding and UX language, presents a concrete simplification plan, implements the approved direction, and performs a final fresh-user walkthrough.
+
+The detailed [navigation and page-usability reference](NAVIGATION_AND_PAGE_USABILITY.md) covers search and wayfinding, page hierarchy, forms, action states, reports, tables, workflow continuity, accessibility, and evidence limits. Validation separates finding the page from understanding it and completing the task.
 
 The intended experience is:
 

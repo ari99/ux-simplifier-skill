@@ -41,7 +41,7 @@ The user should understand:
 
 Treat the current UI as an implementation, not the product specification.
 
-Prefer fewer pages, decisions, concepts, navigation items, fields, and competing actions. Use progressive disclosure, sensible defaults, contextual explanation, and concrete outcome-oriented language.
+Reduce unnecessary decisions, concepts, detours, fields, and competing actions. Fewer pages or visible options is not inherently better: retain visible choices that help recognition, comparison, and recovery. Use progressive disclosure, sensible defaults, contextual explanation, and concrete outcome-oriented language where they improve the task.
 
 Never add complexity merely to make the product appear sophisticated.
 
@@ -61,6 +61,13 @@ You may remove, merge, hide, or redirect UI only when the same capability remain
 `DELETE` means delete a redundant destination or presentation, not the underlying capability.
 
 Never remove a real feature or change business behavior without explicit user approval. Present potential capability removal separately as an optional product decision and continue with a capability-preserving simplification.
+
+## Evidence and task outcomes
+Separate finding the destination from understanding the page, completing its task, and recognizing the result. A cleaner sidebar or fewer clicks does not establish usability improvement.
+
+Use a shared route-and-workflow ledger with page families, primary tasks, roles, prerequisites, and meaningful states. Preserve working patterns before proposing replacements. Distinguish source-review hypotheses, browser observations, participant findings, and measured outcomes; never invent user failures, whole-product scores, or improvement percentages.
+
+For navigation, page design, and behavioral verification, consult the applicable sections of [NAVIGATION_AND_PAGE_USABILITY.md](NAVIGATION_AND_PAGE_USABILITY.md) during Phases 2–4, 8, and 10. It covers search and wayfinding, page hierarchy, forms, action feedback, reports, collections, continuity, accessibility, and research limits. Read only the sections needed for the current task.
 
 ## Token and context discipline
 Minimize repeated context without skipping work:
@@ -128,7 +135,7 @@ Before reporting completion:
 5. Revisit the ledger after implementation for newly exposed routes, states, permissions, and recovery paths.
 6. Verify every changed surface and top-level journey. For pages sharing one implementation, verify the shared behavior plus one representative per meaningful variant.
 7. Perform the fresh-user walkthrough across public entry, account creation, onboarding, first value, repeat use, settings, permissions, errors, empty states, and recovery.
-8. Run appropriate type, lint, unit, integration, and browser checks; fix regressions before completion.
+8. Run appropriate type, lint, unit, integration, and browser checks; fix regressions before completion. Verify finding, comprehension, task completion, and recovery separately.
 9. In the final response, state ledger coverage and unresolved blockers. Never call the pass complete when only prioritized or representative surfaces were implemented.
 
 The pass may end incomplete only when the user pauses or narrows it, an irreversible decision needs approval, or a definitive external blocker prevents further work. Continue all independent ledger items despite one blocked item.
@@ -139,7 +146,7 @@ The pass may end incomplete only when the user pauses or narrows it, an irrevers
 3. User goals come before existing routes.
 4. Remove interface complexity before adding UI.
 5. Preserve every existing product capability by default.
-6. Use one obvious primary action per context.
+6. Make the primary task obvious; read-only pages need a clear decision or useful drill-down, not an invented primary button.
 7. Use progressive disclosure for advanced features.
 8. Prefer defaults and automation to unnecessary questions.
 9. Do not expose implementation concepts unnecessarily.
@@ -150,7 +157,7 @@ The pass may end incomplete only when the user pauses or narrows it, an irrevers
 14. Every successful action makes the next step clear.
 15. Do not turn onboarding into a slideshow.
 16. Do not solve structural problems with tooltips.
-17. Do not solve confusing navigation by adding navigation.
+17. Do not compensate for unclear structure with more menus; add search or contextual links only when they solve a demonstrated finding or return task.
 18. Do not preserve pages merely because they exist.
 19. Do not visually polish a fundamentally confusing workflow.
 20. Optimize for successful task completion, not feature visibility.

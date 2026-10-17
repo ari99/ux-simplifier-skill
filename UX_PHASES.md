@@ -24,6 +24,8 @@ For each outcome identify:
 - confusing terminology and unnecessary detours
 - dead ends, missing feedback, and unclear next actions
 
+Build the route-and-workflow ledger once. For each route or shared page family, capture the primary task, role, prerequisites, entry/return paths, and empty, populated, loading, failed, stale, and read-only states where relevant. Include public entry and account/workspace selection when they are part of the requested journey. Record exceptions and reuse this map throughout the pass.
+
 Do not modify code yet.
 
 ## Phase 2 — Usability audit
@@ -58,7 +60,11 @@ Classify friction as:
 - EXPLAIN
 - KEEP
 
-Prioritize structural problems above cosmetic ones.
+Read the applicable assessment sections of [NAVIGATION_AND_PAGE_USABILITY.md](NAVIGATION_AND_PAGE_USABILITY.md). Each finding names its location, observed evidence or hypothesis, impact, severity, and proposed correction. Distinguish code review from runtime and participant evidence. Do not score uninspected surfaces.
+
+Baseline representative known-item, exploratory, and recovery tasks. Record destination-finding separately from comprehension, completion, time, and recovery. State participant experience, role, fixtures, and sample limits; small formative rounds identify issues rather than prove population-level lift.
+
+Prioritize structural problems above cosmetic ones, preserving patterns that already work.
 
 ## Phase 3 — Redesign user journeys
 Locate and read the complete `journey` skill once, then apply its workflow and principles.
@@ -77,7 +83,7 @@ Reduce unnecessary steps. Combine steps when it improves comprehension. Split sc
 
 Automate choices that do not require user judgment. Prefer sensible defaults. Do not expose configuration before it is needed.
 
-The main workflow should feel guided, not like unrelated features.
+The main workflow should feel guided, not like unrelated features. Preserve non-secret drafts and return context when users leave to fix a prerequisite. Distinguish saving, approval, queuing, and execution; retain authoritative server checks and invalidate approvals when the approved payload changes. Return links must be safe in-app destinations and work without analytics.
 
 ## Phase 4 — Simplify information architecture
 Locate and read the complete `information-architecture-navigation` skill once, then apply its workflow and principles.
@@ -103,6 +109,10 @@ The dashboard or home screen should answer:
 **What should I do next?**
 
 Do not create a wall of equal-weight cards.
+
+Use the navigation and page-hierarchy sections of [NAVIGATION_AND_PAGE_USABILITY.md](NAVIGATION_AND_PAGE_USABILITY.md). Validate label/group changes with failing tasks or other relevant evidence. Keep menu positions stable; make customization user-controlled. Do not impose an arbitrary link count or depth limit as a universal research finding.
+
+Review content within pages as well as routes: main question/task, current status, supporting evidence, controls, and secondary detail. Cover forms, reports, review screens, and collections, not just Home and the sidebar. Do not hide required inputs, blockers, consequences, or essential comparison information.
 
 ## Phase 5 — Design onboarding and guidance
 Locate and read the complete `onboarding-design` skill once, then apply its workflow and principles.
@@ -173,12 +183,15 @@ Rank only the highest-impact structural problems.
 Summarize the first-run journey.
 
 ### Forms and actions
-Call out substantial changes.
+Call out substantial changes, including field correction/input retention, pending and outcome feedback, safe retry, report context, collection filters, and return-to-task behavior. Consult only the applicable page-pattern sections of [NAVIGATION_AND_PAGE_USABILITY.md](NAVIGATION_AND_PAGE_USABILITY.md).
 
 ### Simplifications and capability mapping
 Identify redundant UI, steps, decisions, and destinations being consolidated or removed. Show where every affected capability remains available.
 
 Removal of interface complexity is a feature. Loss of product capability is not.
+
+### Evidence and verification
+Distinguish verified issues from hypotheses. Name baseline tasks, affected page families/states, success criteria, and the behavior checks needed. If producing a milestone document, give work items dependencies and observable acceptance criteria; keep implementation status honest.
 
 Continue directly into implementation.
 
@@ -198,7 +211,7 @@ Where appropriate:
 
 Do not make unrelated architectural rewrites solely for UX cleanup. Keep implementation maintainable.
 
-Implement in coherent slices. Verify focused behavior after each slice before broad checks.
+Implement in coherent slices. Reuse shared page/form/status components and cover meaningful family variants instead of duplicating patterns. Check authorization, payload approval, state retention, and deep links when simplifying presentation. Verify focused behavior after each slice before broad checks.
 
 ## Phase 9 — Visual design and polish
 Only after structure, workflows, information architecture, onboarding, and wording are simplified, locate and read the complete `impeccable` skill once and apply it.
@@ -232,6 +245,8 @@ At every screen verify:
 - Can another step, page, field, or decision be removed without losing capability?
 - Is feedback clear after every important action?
 
-Fix newly discovered problems and rerun focused checks.
+Use the verification section of [NAVIGATION_AND_PAGE_USABILITY.md](NAVIGATION_AND_PAGE_USABILITY.md). Include keyboard-only navigation, focus recovery, screen-reader announcements, responsive/zoomed layouts, and task-state variants. Verify realistic data volume, refresh/Back, validation failure, delayed requests, and safe retry. Automated accessibility checks alone do not establish usability or conformance.
+
+Repeat baseline tasks with comparable fixtures and user experience. Report navigation, comprehension, completion, and recovery independently; disclose what was not tested. Fix newly discovered problems and rerun the affected checks.
 
 Do not stop because the application looks better. It must be substantially easier to use.
